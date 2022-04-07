@@ -1,15 +1,17 @@
 const util = require('util');
 const execNode = util.promisify(require('child_process').exec);
 
-const exec = async (command, feedback) => {
+const exec = async (command, cb) => {
     try {
         const { stdout } = await execNode(command);
 
         console.log(stdout);
 
-        feedback && console.log(feedback);
-    } catch({ message }) {
-        console.log(message);
+        cb?.();
+    } catch(e) {
+        console.log(e.message);
+
+        throw e;
     }
 };
 

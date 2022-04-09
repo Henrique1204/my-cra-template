@@ -1,6 +1,11 @@
-const exec = require('./utils/async-exec');
+const exec = require('./src/core//utils/async-exec');
+const replaceJson = require('./src/core/utils/replace-json');
+const getConfigPath = require('./src/core/utils/get-config-path');
+
+const { resolve } =  require("path");
 
 const [_, __, ...itens] = process.argv;
+const dirname =  process.cwd();
 
 const params = itens.reduce((acc, item) => {
     const [key, value] = item.split('=');
@@ -18,12 +23,9 @@ const params = itens.reduce((acc, item) => {
         await exec('npm i  @types/styled-components -D');
 
         // Após instalar o projeto é preciso sobrescrever o package.json com base do seu.
-        // const brinks1 = { scripts: { start: 'meu' } };
-        // const brinks2 = { scripts: { start: 'react', other: 'outro' } };
+        await replaceJson(resolve(dirname, "package.json"), JSON.stringify(getConfigPath('package.setup.json')));
 
-        // const brinks3 = { ...brinks2, scripts: { ...brinks2.script, ...brinks1.scripts } };
-
-        // console.log(brinks3);
+        console.log('### ACABOU ###');
     } catch(_) {}
 })();
 

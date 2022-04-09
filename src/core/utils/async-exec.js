@@ -7,7 +7,7 @@ const exec = async (command, cb) => {
 
         console.log(stdout);
 
-        cb?.();
+        cb && cb();
     } catch(e) {
         console.log(e.message);
 

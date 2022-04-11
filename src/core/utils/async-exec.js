@@ -1,5 +1,4 @@
-const util = require('util');
-const execNode = util.promisify(require('child_process').exec);
+const { exec: execNode } = require('./async-functions');
 
 const exec = async (command, cb) => {
     try {

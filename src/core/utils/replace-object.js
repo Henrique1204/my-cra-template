@@ -1,14 +1,20 @@
 const replaceKeybyKey = (primary = {}, secondary = {}) => {
-    const keys = Object.keys(primary);
+    const primaryKeys = Object.keys(primary);
+    const secondaryKeys = Object.keys(secondary);
+
+    const keys = Array.from(new Set([...primaryKeys, ...secondaryKeys]));
 
     const newObject = keys.reduce((acc, key) => {
-        const value = primary[key]; 
+        const primaryValue = primary[key];
+        const secondaryValue = secondary[key];
 
-        if (typeof value === 'object') {
-            return { ...acc, [key]: replaceKeybyKey(primary[key], secondary[key]) };
+        const isArray = Array.isArray(primaryValue) || Array.isArray(secondaryValue);
+
+        if (typeof primaryValue === 'object' && primaryValue !== undefined && !isArray) {
+            return { ...acc, [key]: replaceKeybyKey(primaryValue, secondaryValue) };
         }
         
-        return { ...acc, [key]: secondary[key] || primary[key] };
+        return { ...acc, [key]: secondaryValue || primaryValue };
     }, {});
 
     return newObject;

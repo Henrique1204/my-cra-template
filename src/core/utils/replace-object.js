@@ -20,8 +20,12 @@ const replaceKeybyKey = (primary = {}, secondary = {}) => {
     return newObject;
 };
 
-const replaceObject = (primary, secondary) => {
-    return { ...primary, ...replaceKeybyKey(primary, secondary) };
+const replaceObject = (primary, secondary, removeKeys) => {
+    const primaryClean = Object.keys(primary).filter((key) => !removeKeys.includes(key)).reduce((acc, key) => {
+        return { ...acc, [key]: primary[key] }
+    }, {});
+
+    return { ...primaryClean, ...replaceKeybyKey(primaryClean, secondary) };
 }
 
 module.exports = replaceObject;

@@ -12,7 +12,7 @@ const params = itens.reduce((acc, item) => {
 (async () => {
     try {
         // Instalando o projeto e bibliotecas necessárias.
-        // await installProject();
+        await installProject();
 
         // Ajustando arquivos do diretório.
         await adjustFiles();

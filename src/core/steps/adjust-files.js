@@ -33,12 +33,19 @@ const adjustFiles = async () => {
             resolve(dirname, '.prettier.js')
         );
 
-        // Copiando o arquivo de configuração do vscode pra raiz do novo projeto.
+        // Criando a pasta .vscode no novo projeto.
         await mkdirAsync(resolve(dirname, '.vscode'));
 
+        // Copiando o arquivo de configuração do vscode pra dentro do projeto.
         await copyFileAsync(
-            getConfigPath('vscode.setup.json'),
+            getConfigPath('.vscode/settings.setup.json'),
             resolve(dirname, '.vscode/settings.json')
+        );
+    
+        // Copiando o arquivo de snippets do vscode pra dentro do projeto.
+        await copyFileAsync(
+            getConfigPath('.vscode/global.setup.code-snippets'),
+            resolve(dirname, '.vscode/global.code-snippets')
         );
     } catch(e) {
         throw e;

@@ -39,7 +39,7 @@
 		"prefix": ["component-styles", "mcs"],
 		"body": [
 			"import React from 'react';",
-			"\nimport * as Styles from './styles';",
+			"\nimport * as Styles from './index.styled.ts';",
 			"\nconst $1ComponentName: React.FC = () => {",
 			"\treturn <></>;",
 			"};",
@@ -47,6 +47,34 @@
 			"",
 		],
 		"description": "Create component with arrow function, IComponent typing and import of styles."
+	},
+	"Inicialize Router Component": {
+		"prefix": ["route-init", "mri"],
+		"body": [
+			"import React from 'react';",
+			"import { Routes, Route } from 'react-router-dom';",
+			"\nimport { LazyRoute } from 'components';",
+			"\nconst MyPages = {",
+			"\tTemplate: React.lazy(() => import('./Template')),",
+			"};",
+			"\nconst RoutesComponent = () => {",
+			"\treturn (",
+			"\t\t<Routes>",
+			"\t\t\t<Route",
+			"\t\t\t\tpath=''",
+			"\t\t\t\telement={",
+			"\t\t\t\t\t<LazyRoute component={<MyPages.Template />} isDrawer={false} />",
+			"\t\t\t\t}",
+			"\t\t\t>",
+			"\t\t\t\t$1",
+			"\t\t\t</Route>",
+			"\t\t</Routes>",
+			"\t);",
+			"};",
+			"\nexport default RoutesComponent;",
+			""
+		],
+		"description": "Start component for route of pages."
 	},
 	"Inicialize Styled Component": {
 		"prefix": ["styled-init", "msi"],

@@ -4,13 +4,13 @@
 
 ## Padrões de Desenvolvimento.
 
-- Os componentes devem ser separados por pastas e devem ser nomeadas com `PascalCase`.
+- Os contextos devem ser separados por pastas e devem ser nomeadas com `PascalCase`.
 
-- Cada pasta deverá conter os seguintes arquivos `index.tsx`, `index.mdx`, `styles.ts`, `index.test.tsx`.
+- Cada pasta deverá conter os seguintes arquivos `index.tsx`, `index.mdx`, `index.styled.ts`, `index.test.tsx`.
 
 - Pode conter sub componentes para auxiliar na componentização/criação do componente.
 
-- Após a criação do componente deve imporar e exportar ele no index.ts na raiz da pasta componentes, a ordem de importação deve ser feita em ordem alfabética. 
+- Após a criação do componente deve importar e exportar ele no index.ts na raiz da pasta componentes, a ordem de importação deve ser alfabética. 
 
 ## Exemplos de Arquivos
 
@@ -21,7 +21,7 @@ A estrutura esperada para criação dos componente segue abaixo:
 ```ts
 import React from 'react';
 
-import * as Styles from './styles.ts';
+import * as Styles from './index.styled.ts';
 
 interface IMyComponentProps {
     prop1: string;
@@ -77,7 +77,7 @@ import Playground from '../Playground';
 </Playground>
 ```
 
-### `styles.ts` (Estilo do componente).
+### `index.styled.ts` (Estilo do componente).
 
 É onde será criado os estilos utilizados pelo componente, por padrão os estilos devem ser criados com `styled-components`.
 
@@ -110,4 +110,4 @@ describe('<MyComponent />', () => {
 });
 ```
 
-Deve se utilizar os métodos do CustomRender em vez do testingLibary
+Deve se utilizar os métodos do CustomRender em vez do testingLibary.

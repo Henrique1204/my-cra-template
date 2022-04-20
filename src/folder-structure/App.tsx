@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
 import theme from './Core/Assets/theme';
+import Routes from './routes';
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -56,7 +57,9 @@ const App: React.FC = () => {
     <>
       <GlobalStyle />
 
-      <ThemeProvider theme={theme}></ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
     </>
   );
 };

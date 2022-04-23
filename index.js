@@ -1,28 +1,26 @@
-const installProject = require('./src/core/steps/install-project');
-const adjustFiles = require('./src/core/steps/adjust-files');
-const adjustStructure = require('./src/core/steps/adjust-structure');
+const installProject = require("./src/core/steps/install-project");
+const adjustFiles = require("./src/core/steps/adjust-files");
+const adjustStructure = require("./src/core/steps/adjust-structure");
 
 const [_, __, ...itens] = process.argv;
 
 const params = itens.reduce((acc, item) => {
-    const [key, value] = item.split('=');
+  const [key, value] = item.split("=");
 
-    return { ...acc, [key]: value || true };
+  return { ...acc, [key]: value || true };
 }, {});
 
 (async () => {
-    try {
-        // // Instalando o projeto e bibliotecas necessárias.
-        await installProject();
+  try {
+    // // Instalando o projeto e bibliotecas necessárias.
+    await installProject();
 
-        // // Ajustando arquivos do diretório.
-        await adjustFiles();
+    // // Ajustando arquivos do diretório.
+    await adjustFiles();
 
-        await adjustStructure();
-    } catch(e) {
-        console.clear();
-        console.log(e);
-    }
+    await adjustStructure();
+  } catch (e) {
+    console.clear();
+    console.log(e);
+  }
 })();
-
-

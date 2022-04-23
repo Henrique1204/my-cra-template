@@ -1,8 +1,8 @@
-import React from 'react';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import React from "react";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 
-import theme from './Core/Assets/theme';
-import Routes from './routes';
+import theme from "./Core/Assets/theme";
+import Routes from "./routes";
 
 const GlobalStyle = createGlobalStyle`
   *,

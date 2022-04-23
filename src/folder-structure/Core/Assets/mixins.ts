@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
-import * as Types from '../../@types/styled-components/mixins';
+import { css } from "styled-components";
+import * as Types from "../../@types/styled-components/mixins";
 
 const mixins = {
   scrollbar: () => css`
@@ -42,18 +42,18 @@ const mixins = {
   `,
   backgroundImage: ({
     url,
-    repeat = 'no-repeat',
-    position = 'center',
-    size = 'cover',
+    repeat = "no-repeat",
+    position = "center",
+    size = "cover",
   }: Types.IBackgroundImageProps) => css`
     background: ${`url('${url}') ${repeat} ${position}`};
     background-size: ${size};
   `,
   hover: ({
-    transitionProp = 'all',
-    transitionTime = '0.3s',
+    transitionProp = "all",
+    transitionTime = "0.3s",
     active = true,
-    selector = '&',
+    selector = "&",
     backgroundColor,
     borderColor,
     color,
@@ -61,7 +61,7 @@ const mixins = {
     custom,
     fill,
   }: Types.IHoverProps) => {
-    if (!active) return '';
+    if (!active) return "";
 
     return css`
       ${selector} {

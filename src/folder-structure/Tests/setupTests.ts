@@ -1,6 +1,6 @@
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
-Object.defineProperty(window, 'matchMedia', {
+Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: jest.fn().mockImplementation((query) => ({
     matches: false,
@@ -14,12 +14,12 @@ Object.defineProperty(window, 'matchMedia', {
 
 export const reactRouterMock = {
   useNavigate: jest.fn(),
-  params: {}
+  params: {},
 };
 
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useParams: () => (reactRouterMock.params),
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useParams: () => reactRouterMock.params,
   useNavigate: () => reactRouterMock.useNavigate,
-  Outlet: () => 'Outlet',
+  Outlet: () => "Outlet",
 }));

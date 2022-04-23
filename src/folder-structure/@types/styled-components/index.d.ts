@@ -1,8 +1,13 @@
-import 'styled-components';
+import "styled-components";
 
-import { BreakpointsValues, PaletteValues, ScreensMethods, MixinsValues } from './themeEnum';
+import {
+  BreakpointsValues,
+  PaletteValues,
+  ScreensMethods,
+  MixinsValues,
+} from "./themeEnum";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     palette: PaletteValues;
     breakpoints: BreakpointsValues;

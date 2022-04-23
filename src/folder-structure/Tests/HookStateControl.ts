@@ -1,17 +1,17 @@
-import { RenderHookResult } from '@testing-library/react';
+import { RenderHookResult } from "@testing-library/react";
 
 class HookStateControl<T> {
-	constructor(private renderResult: RenderHookResult<T, T>) {}
+  constructor(private renderResult: RenderHookResult<T, T>) {}
 
-	public get render() {
-		return this.renderResult;
-	}
+  public get render() {
+    return this.renderResult;
+  }
 
-	public get state() {
-		const { result } = this.renderResult;
+  public get state() {
+    const { result } = this.renderResult;
 
-		return result.current;
-	}
+    return result.current;
+  }
 }
 
 export default HookStateControl;

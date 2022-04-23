@@ -1,6 +1,5 @@
 module.exports = {
-    process() {
-      return 'module.exports = "<div>svg</div>"';
-    },
-  };
-  
+  process() {
+    return 'module.exports = "<div>svg</div>"';
+  },
+};

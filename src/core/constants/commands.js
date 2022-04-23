@@ -7,6 +7,11 @@ const DEV_DEPENDENCIES = [
     "@types/styled-components",
     "@craco/craco",
     "babel-plugin-transform-inline-environment-variables",
+    "babel-plugin-transform-inline-environment-variables",
+    "@testing-library/dom",
+    "jest-environment-jsdom",
+    "fetch-mock",
+    "ts-jest"
 ];
 
 const COMMANDS_LIST = {

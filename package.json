@@ -1,11 +1,12 @@
 {
-  "name": "henrique1204-cra-template",
-  "version": "1.0.6",
+  "name": "@henrique1204/create-react-app",
+  "version": "1.0.0",
+  "private": false,
   "description": "Template to facilitate the creation of new projects with the predefined structure",
   "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "henrique1204-cra-template": "node index.js"
+    "create-react-app": "node index.js"
   },
   "repository": {
     "type": "git",

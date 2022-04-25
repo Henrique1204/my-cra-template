@@ -1,14 +1,16 @@
 const { exec: execNode } = require("./async-functions");
 
-const exec = async (command, cb) => {
+const exec = async (command, cbSuccess, cbError) => {
   try {
     const { stdout } = await execNode(command);
 
-    console.log(stdout);
+    console.log("\n\n" + stdout + "\n\n");
 
-    cb && cb();
+    !!cbSuccess && cbSuccess();
   } catch (e) {
-    console.log(e.message);
+    !!cbError && cbError();
+
+    console.log("\n\n" + e.message + "\n\n");
 
     throw e;
   }

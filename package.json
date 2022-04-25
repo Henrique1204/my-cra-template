@@ -6,7 +6,8 @@
   "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create-react-app": "node index.js"
+    "create-react-app": "node index.js",
+    "@henrique1204/create-react-app": "node index.js"
   },
   "repository": {
     "type": "git",

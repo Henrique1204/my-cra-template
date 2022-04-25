@@ -1,7 +1,6 @@
 {
   "name": "henrique1204-cra-template",
-  "version": "1.0.4",
-  "private": false,
+  "version": "1.0.5",
   "description": "Template to facilitate the creation of new projects with the predefined structure",
   "main": "./index.js",
   "scripts": {

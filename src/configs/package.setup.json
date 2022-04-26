@@ -2,7 +2,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "yarn jest --coverage=false",
+    "test": "jest --coverage=false",
     "test:clear": "jest --clearCache",
     "test:silent": "jest --coverage=false --watchAll --silent --noStackTrace",
     "test:coverage": "jest --coverage --silent --noStackTrace"

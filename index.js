@@ -12,7 +12,7 @@ const params = itens.reduce((acc, item) => {
   return { ...acc, [key]: value || true };
 }, {});
 
-(async () => {
+const initi = async () => {
   try {
     // // Instalando o projeto e bibliotecas necessárias.
     await installProject();
@@ -25,4 +25,6 @@ const params = itens.reduce((acc, item) => {
     console.clear();
     console.log(e);
   }
-})();
+};
+
+module.exports = initi;

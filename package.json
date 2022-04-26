@@ -1,13 +1,12 @@
 {
   "name": "@henrique1204/create-react-app",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "Template to facilitate the creation of new projects with the predefined structure",
   "main": "index.js",
   "bin": ".bin/cli.js",
   "scripts": {
-    "create-react-app": "node .bin/cli.js",
-    "@henrique1204/create-react-app": "node .bin/cli.js"
+    "create-react-app": "node .bin/cli.js"
   },
   "repository": {
     "type": "git",

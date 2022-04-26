@@ -11,11 +11,17 @@ const DEV_DEPENDENCIES = [
   "ts-jest",
 ];
 
+const JEST_DEPENDENCIES = [
+  "babel-jest@26.6.0",
+  "jest@26.6.0"
+];
+
 const COMMANDS_LIST = {
   START: "npx create-react-app . --template typescript",
   FIX_REACT_SCRIPTS: "npm i react-scripts@4.0.3 -D",
   INSTALL_DEPENDENCIES_BASE: `npm i ${BASE_DEPENDENCIES.join(" ")}`,
   INSTALL_DEPENDENCIES_DEV: `npm i ${DEV_DEPENDENCIES.join(" ")} -D`,
+  FIX_JEST_DEPENDENCIES: `npm i ${JEST_DEPENDENCIES.join(" ")} -D`,
 };
 
 module.exports = COMMANDS_LIST;

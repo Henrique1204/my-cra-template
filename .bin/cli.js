@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const installProject = require("./src/core/steps/install-project");
-const adjustFiles = require("./src/core/steps/adjust-files");
-const adjustStructure = require("./src/core/steps/adjust-structure");
+const installProject = require("../src/core/steps/install-project");
+const adjustFiles = require("../src/core/steps/adjust-files");
+const adjustStructure = require("../src/core/steps/adjust-structure");
 
 const [_, __, ...itens] = process.argv;
 

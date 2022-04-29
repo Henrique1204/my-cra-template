@@ -34,12 +34,6 @@ const installProject = async () => {
       COMMANDS_LIST.INSTALL_DEPENDENCIES_DEV,
       "Instalando as dependências de desenvolvimento"
     );
-
-    // Corrigindo a versão do jest para bater com o react-scripts.
-    await execWithLoadingMessage(
-      COMMANDS_LIST.FIX_JEST_DEPENDENCIES,
-      "Corrigindo versões do jest"
-    );
   } catch (e) {
     throw e;
   }

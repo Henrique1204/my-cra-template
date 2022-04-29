@@ -1,6 +1,6 @@
 {
   "name": "@henrique1204/create-react-app",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "private": false,
   "description": "Template to facilitate the creation of new projects with the predefined structure",
   "main": "index.js",

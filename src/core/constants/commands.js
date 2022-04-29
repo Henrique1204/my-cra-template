@@ -6,14 +6,11 @@ const DEV_DEPENDENCIES = [
   "babel-plugin-transform-inline-environment-variables",
   "babel-plugin-transform-inline-environment-variables",
   "@testing-library/dom",
-  "jest-environment-jsdom",
+  "jest-environment-jsdom@27.5.1",
   "fetch-mock",
   "ts-jest",
-];
-
-const JEST_DEPENDENCIES = [
-  "babel-jest@26.6.0",
-  "jest@26.6.0"
+  "babel-jest@27.5.1",
+  "jest@27.5.1",
 ];
 
 const COMMANDS_LIST = {
@@ -21,7 +18,6 @@ const COMMANDS_LIST = {
   FIX_REACT_SCRIPTS: "npm i react-scripts@4.0.3 -D",
   INSTALL_DEPENDENCIES_BASE: `npm i ${BASE_DEPENDENCIES.join(" ")}`,
   INSTALL_DEPENDENCIES_DEV: `npm i ${DEV_DEPENDENCIES.join(" ")} -D`,
-  FIX_JEST_DEPENDENCIES: `npm i ${JEST_DEPENDENCIES.join(" ")} -D`,
 };
 
 module.exports = COMMANDS_LIST;

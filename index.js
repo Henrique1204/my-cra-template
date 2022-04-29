@@ -3,6 +3,7 @@
 const installProject = require("./src/core/steps/install-project");
 const adjustFiles = require("./src/core/steps/adjust-files");
 const adjustStructure = require("./src/core/steps/adjust-structure");
+const adjustEnvironments = require("./src/core/steps/adjust-environments");
 
 const [_, __, ...itens] = process.argv;
 
@@ -20,7 +21,11 @@ const initi = async () => {
     // // Ajustando arquivos do diretório.
     await adjustFiles();
 
+    // Ajustando estrutura de arquivos.
     await adjustStructure();
+
+    // Ajustando enviroments do projeto.
+    await adjustEnvironments();
   } catch (e) {
     console.clear();
     console.log(e);

@@ -1,0 +1,2 @@
+# Deve ser preenchido com true.
+SKIP_PREFLIGHT_CHECK=

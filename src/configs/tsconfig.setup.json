@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "types": ["@types/jest", "@types/node"],
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
+  },
+  "include": ["**/*.*", "**/*.svg"],
+  "exclude": ["**/*.test.*"]
+}

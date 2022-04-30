@@ -1,4 +1,4 @@
-import * as Theme from "../../Core/Assets/theme";
+import * as Theme from 'Assets/theme';
 
 export type TextColorsValues = typeof Theme.text;
 export type TextColorsEnum = keyof TextColorsValues;

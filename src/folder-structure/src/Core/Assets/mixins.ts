@@ -1,5 +1,6 @@
 import { css } from "styled-components";
-import * as Types from "../../@types/styled-components/mixins";
+
+import * as Types from "Types/styled-components/mixins";
 
 const mixins = {
   scrollbar: () => css`

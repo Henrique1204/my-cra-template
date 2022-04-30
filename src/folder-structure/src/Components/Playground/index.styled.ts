@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
 
   & * {
     box-sizing: border-box;
-    font-family: 'Inter';
+    font-family: "Inter";
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased;

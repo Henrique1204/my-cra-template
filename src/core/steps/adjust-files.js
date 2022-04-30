@@ -5,71 +5,78 @@ const getFolderPath = require("../utils/get-folder-path");
 
 const { copyFileAsync, mkdirAsync } = require("../utils/async-functions");
 
+const filesForCopy = [
+  { file: "craco.setup.js", destiny: "craco.config.js" },
+  {
+    file: "eslintconfig.setup.json",
+    destiny: ".eslintrc.json",
+  },
+  { file: "prettier.setup.js", destiny: ".prettier.js" },
+  {
+    file: "jest.config.setup.js",
+    destiny: "jest.config.js",
+  },
+  {
+    file: "jest.tsconfig.setup.json",
+    destiny: "jest.tsconfig.json",
+  },
+  { file: "doczrc.setup.js", destiny: "doczrc.js" },
+  {
+    file: "gatsby-node.setup.js",
+    destiny: "gatsby-node.js",
+  },
+  {
+    file: ".vscode/settings.setup.json",
+    destiny: ".vscode/settings.json",
+  },
+  {
+    file: ".vscode/global.setup.code-snippets",
+    destiny: ".vscode/global.code-snippets",
+  },
+  {
+    file: "tsconfig.paths.setup.json",
+    destiny: "tsconfig.paths.json",
+  },
+];
+
+const jsonsForReplace = [
+  {
+    originFile: "package.json",
+    newFile: "package.setup.json",
+    removeKeys: ["eslintConfig"],
+  },
+  {
+    originFile: "tsconfig.json",
+    newFile: "tsconfig.setup.json",
+    removeKeys: [],
+  },
+];
+
 const adjustFiles = async () => {
   try {
-    // Substituindo o package.json padrão pelo nosso.
-    await replaceJson(
-      `${dirname}/package.json`,
-      getFolderPath("configs", "package.setup.json"),
-      ["eslintConfig"]
-    );
-
-    // Copiando o arquivo de configuração do craco pra raiz do novo projeto.
-    await copyFileAsync(
-      getFolderPath("configs", "craco.setup.js"),
-      `${dirname}/craco.config.js`
-    );
-
-    // Copiando o arquivo de configuração do eslint pra raiz do novo projeto.
-    await copyFileAsync(
-      getFolderPath("configs", "eslintconfig.setup.json"),
-      `${dirname}/.eslintrc.json`
-    );
-
-    // Copiando o arquivo de configuração do prettier pra raiz do novo projeto.
-    await copyFileAsync(
-      getFolderPath("configs", "prettier.setup.js"),
-      `${dirname}/.prettier.js`
-    );
-
-    // Copiando o arquivo de configuração do jest para raiz do novo projeto.
-    await copyFileAsync(
-      getFolderPath("configs", "jest.config.setup.js"),
-      `${dirname}/jest.config.js`
-    );
-
-    // Copiando o arquivo de configuração do typescript jest para raiz do novo projeto.
-    await copyFileAsync(
-      getFolderPath("configs", "jest.tsconfig.setup.json"),
-      `${dirname}/jest.tsconfig.json`
-    );
-
-    // Copiando o arquivo de configuração do docz para raiz do novo projeto.
-    await copyFileAsync(
-      getFolderPath("configs", "doczrc.setup.js"),
-      `${dirname}/doczrc.js`
-    );
-
-    // Copiando o arquivo de configuração do gatsby para raiz do novo projeto.
-    await copyFileAsync(
-      getFolderPath("configs", "gatsby-node.setup.js"),
-      `${dirname}/gatsby-node.js`
-    );
-
-    // Criando a pasta .vscode no novo projeto.
+    // // Criando a pasta .vscode no novo projeto.
     await mkdirAsync(`${dirname}/.vscode`);
 
-    // Copiando o arquivo de configuração do vscode pra dentro do projeto.
-    await copyFileAsync(
-      getFolderPath("configs", ".vscode/settings.setup.json"),
-      `${dirname}/.vscode/settings.json`
-    );
+    // Substituindo os json padrões pelos nossos.
+    for (let i = 0; i < jsonsForReplace.length; i++) {
+      const { originFile, newFile, removeKeys } = jsonsForReplace[i];
 
-    // Copiando o arquivo de snippets do vscode pra dentro do projeto.
-    await copyFileAsync(
-      getFolderPath("configs", ".vscode/global.setup.code-snippets"),
-      `${dirname}/.vscode/global.code-snippets`
-    );
+      await replaceJson(
+        `${dirname}/${originFile}`,
+        getFolderPath("configs", newFile),
+        removeKeys
+      );
+    }
+
+    // Copiando arquivos de configuração para dentro do projeto.
+    for (let i = 0; i < filesForCopy.length; i++) {
+      const { file, destiny } = filesForCopy[i];
+
+      await copyFileAsync(
+        getFolderPath("configs", file),
+        `${dirname}/${destiny}`
+      );
+    }
   } catch (e) {
     throw e;
   }

@@ -1,12 +1,18 @@
-import React from 'react';
-import { Playground, PlaygroundProps } from 'docz';
-import { ThemeProvider } from 'styled-components';
+import React from "react";
 
-import theme from 'Core/assets/theme';
+import { Playground, PlaygroundProps } from "docz";
 
-import * as Styles from './index.styled.ts';
+import { ThemeProvider } from "styled-components";
 
-const CustomPlayground: React.FC<PlaygroundProps> = ({ __scope, children, ...props }) => {
+import theme from "Assets/theme";
+
+import * as Styles from "./index.styled";
+
+const CustomPlayground: React.FC<PlaygroundProps> = ({
+  __scope,
+  children,
+  ...props
+}) => {
   const customScope = {
     ...__scope,
     Styles,

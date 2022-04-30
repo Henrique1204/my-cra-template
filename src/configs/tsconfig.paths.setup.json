@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "Mocks/*": ["./@mocks/*"],
+      "Types/*": ["./@types/*"],
+      "Components/*": ["./Components/*"],
+      "Core/*": ["./Core/*"],
+      "Assets/*": ["./Core/Assets/*"],
+      "Constants/*": ["./Core/Constants/*"],
+      "Helpers/*": ["./Core/Helpers/*"],
+      "Services/*": ["./Core/Services/*"],
+      "Hooks/*": ["./Hooks/*"],
+      "Contexts/*": ["./Contexts/*"],
+      "Pages/*": ["./Pages/*"],
+      "Tests/*": ["./Tests/*"]
+    }
+  }
+}

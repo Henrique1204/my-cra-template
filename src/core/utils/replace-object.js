@@ -25,7 +25,7 @@ const replaceKeybyKey = (primary = {}, secondary = {}) => {
   return newObject;
 };
 
-const replaceObject = (primary, secondary, removeKeys) => {
+const replaceObject = (primary, secondary, removeKeys = []) => {
   const primaryClean = Object.keys(primary)
     .filter((key) => !removeKeys.includes(key))
     .reduce((acc, key) => {

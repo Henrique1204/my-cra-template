@@ -2,14 +2,14 @@ const replaceObject = require("./replace-object");
 
 const { readFileAsync, writeFileAsync } = require("./async-functions");
 
-const replaceJson = async (originalFile, newFile, removeKeys) => {
+const replaceJson = async (originFile, newFile, removeKeys = []) => {
   try {
-    const originalJson = JSON.parse(await readFileAsync(originalFile));
+    const originJson = JSON.parse(await readFileAsync(originFile));
     const newJson = JSON.parse(await readFileAsync(newFile));
 
     await writeFileAsync(
-      originalFile,
-      JSON.stringify(replaceObject(originalJson, newJson, removeKeys))
+      originFile,
+      JSON.stringify(replaceObject(originJson, newJson, removeKeys))
     );
   } catch (e) {
     console.log(e.message);

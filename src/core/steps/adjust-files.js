@@ -32,16 +32,28 @@ const adjustFiles = async () => {
       `${dirname}/.prettier.js`
     );
 
-    // Copiando o arquivo de configuração do jest pra raiz do novo projeto.
+    // Copiando o arquivo de configuração do jest para raiz do novo projeto.
     await copyFileAsync(
       getFolderPath("configs", "jest.config.setup.js"),
       `${dirname}/jest.config.js`
     );
 
-    // Copiando o arquivo de configuração do typescript para jest pra raiz do novo projeto.
+    // Copiando o arquivo de configuração do typescript jest para raiz do novo projeto.
     await copyFileAsync(
       getFolderPath("configs", "jest.tsconfig.setup.json"),
       `${dirname}/jest.tsconfig.json`
+    );
+
+    // Copiando o arquivo de configuração do docz para raiz do novo projeto.
+    await copyFileAsync(
+      getFolderPath("configs", "doczrc.setup.js"),
+      `${dirname}/doczrc.js`
+    );
+
+    // Copiando o arquivo de configuração do gatsby para raiz do novo projeto.
+    await copyFileAsync(
+      getFolderPath("configs", "gatsby-node.setup.js"),
+      `${dirname}/gatsby-node.js`
     );
 
     // Criando a pasta .vscode no novo projeto.

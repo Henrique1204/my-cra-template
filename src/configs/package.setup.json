@@ -1,10 +1,15 @@
 {
   "scripts": {
+    "clear-cache": "rm -Rf node_modules/.cache .docz",
     "start": "craco start",
     "build": "craco build",
+    "docs": "yarn clear-cache && docz dev -p 4000",
     "test": "jest --coverage=false",
     "test:clear": "jest --clearCache",
     "test:silent": "jest --coverage=false --watchAll --silent --noStackTrace",
     "test:coverage": "jest --coverage --silent --noStackTrace"
-  }
+  },
+  "resolutions": {
+		"remark-mdx": "1.6.22"
+	}
 }

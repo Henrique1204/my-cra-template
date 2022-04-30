@@ -1,11 +1,9 @@
 const path = require("path");
 
-module.exports = () => {
-  return {
-    babel: {
-      plugins: ["transform-inline-environment-variables"],
-    },
-    webpack: {
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "../src"), "node_modules"],
       alias: {
         Types: path.resolve(__dirname, "src/@types"),
         Mocks: path.resolve(__dirname, "src/@mocks"),
@@ -21,5 +19,5 @@ module.exports = () => {
         Tests: path.resolve(__dirname, "src/Tests"),
       },
     },
-  };
+  });
 };

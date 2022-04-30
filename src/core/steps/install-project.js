@@ -14,7 +14,7 @@ const execWithLoadingMessage = async (command, message) => {
 
 const installProject = async () => {
   try {
-    // Executando o CRA padrão do React com o template de TypeScript.
+    // // Executando o CRA padrão do React com o template de TypeScript.
     await execWithLoadingMessage(COMMANDS_LIST.START, "Iniciando o projeto");
 
     // Corrigindo o react-scripts para utilização do craco no projeto.
@@ -33,6 +33,18 @@ const installProject = async () => {
     await execWithLoadingMessage(
       COMMANDS_LIST.INSTALL_DEPENDENCIES_DEV,
       "Instalando as dependências de desenvolvimento"
+    );
+
+    // Instalando dependências do jest.
+    await execWithLoadingMessage(
+      COMMANDS_LIST.INSTALL_DEPENDENCIES_JEST,
+      "Instalando as dependências do jest"
+    );
+
+    // Instalando dependências do docz.
+    await execWithLoadingMessage(
+      COMMANDS_LIST.INSTALL_DOCZ_DEPENDENCIES,
+      "Instalando as dependências do docz"
     );
   } catch (e) {
     throw e;

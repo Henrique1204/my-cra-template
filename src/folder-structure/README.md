@@ -1,6 +1,7 @@
-# Introdução ao Projeto criado com `@henrique1204/create-react-app`.
+# Projeto criado com `@henrique1204/create-react-app`.
 
-Esse projeto foi criado utilizando como base no [Create React App](https://github.com/facebook/create-react-app) original\
+Esse projeto foi criado utilizando como base no [Create React App](https://github.com/facebook/create-react-app) original.
+
 E personalizado por [@henrique1024](https://github.com/Henrique1204/my-cra-template).
 
 ## Dependências usadas no projeto.
@@ -29,18 +30,22 @@ No diretório raiz do projeto:
 
 ### `npm start` ou `yarn start`
 
-Inicia o projeto em modo de desenvolvimento.\
+Inicia o projeto em modo de desenvolvimento.
+
 O projeto será aberto na url [http://localhost:3000](http://localhost:3000) dentro do navegador.
 
-O projeto irá ser atualizado cada vez que um arquivo seja alterado.\
+O projeto irá ser atualizado cada vez que um arquivo seja alterado.
+
 Os erros e avisos do eslint aparecerão no terminal caso existam.
 
 ### `npm run build`
 
-Compila o aplicativo para produção na pasta `build`.\
+Compila o aplicativo para produção na pasta `build`.
+
 Ele agrupa corretamente o React no modo de produção e otimiza a compilação para o melhor desempenho.
 
-A compilação é reduzida e os nomes dos arquivos incluem os hashes.\
+A compilação é reduzida e os nomes dos arquivos incluem os hashes.
+
 Seu aplicativo está pronto para ser implantado!
 
 Veja a seção sobre [deployment](https://facebook.github.io/create-react-app/docs/deployment) Para maiores informações.
@@ -79,7 +84,8 @@ Gera o relatório de cobertura dos testes, para exibir o quanto `(%)` do seu pro
 
 ### `npm docs` ou `yarn docs`
 
-Inicia a documentação do projeto pelo `docz`.\
+Inicia a documentação do projeto pelo `docz`.
+
 A documentação será aberta na url [http://localhost:4000](http://localhost:4000) dentro do navegador.
 
 ## Mais informação

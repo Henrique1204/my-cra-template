@@ -26,7 +26,7 @@ const COMMANDS_LIST = {
   INSTALL_DEPENDENCIES_BASE: `npm i ${BASE_DEPENDENCIES.join(" ")}`,
   INSTALL_DEPENDENCIES_DEV: `npm i ${DEV_DEPENDENCIES.join(" ")} -D`,
   INSTALL_DEPENDENCIES_JEST: `npm i ${JEST_DEPENDENCIES.join(" ")} -D`,
-  INSTALL_DOCZ_DEPENDENCIES: `npm i ${DOCZ_DEPENDENCIES.join(" ")} -D`,
+  INSTALL_DOCZ_DEPENDENCIES: `npm i ${DOCZ_DEPENDENCIES.join(" ")} -D --legacy-peer-deps`,
 };
 
 module.exports = COMMANDS_LIST;

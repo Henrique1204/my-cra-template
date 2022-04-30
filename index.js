@@ -3,7 +3,6 @@
 const installProject = require("./src/core/steps/install-project");
 const adjustFiles = require("./src/core/steps/adjust-files");
 const adjustStructure = require("./src/core/steps/adjust-structure");
-const adjustEnvironments = require("./src/core/steps/adjust-environments");
 
 const [_, __, ...itens] = process.argv;
 
@@ -16,16 +15,13 @@ const params = itens.reduce((acc, item) => {
 const initi = async () => {
   try {
     // // Instalando o projeto e bibliotecas necessárias.
-    await installProject();
+    // await installProject();
 
     // // Ajustando arquivos do diretório.
-    await adjustFiles();
+    // await adjustFiles();
 
     // Ajustando estrutura de arquivos.
     await adjustStructure();
-
-    // Ajustando enviroments do projeto.
-    await adjustEnvironments();
   } catch (e) {
     console.clear();
     console.log(e);

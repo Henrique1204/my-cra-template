@@ -4,45 +4,47 @@ const getFolderPath = require("../utils/get-folder-path");
 
 const { copyFolderAsync, rmAsync, copyFileAsync } = require("../utils/async-functions");
 
-const adjustStructure = async () => {
+const adjustStructure = async (name) => {
   try {
+    const baseDir = `${dirname}${!!name && name !== '.' ? `/${name}` : ''}`;
+
     // Apagando o .gitignore original.
-    await rmAsync(`${dirname}/.gitignore`, { force: true });
+    await rmAsync(`${baseDir}/.gitignore`, { force: true });
 
     // Copiando o arquivo .gitignore para raiz do projeto.
     await copyFileAsync(
       getFolderPath("folder-structure", "gitignore.txt"),
-      `${dirname}/.gitignore`
+      `${baseDir}/.gitignore`
     );
 
     // Apagando o README.md original.
-    await rmAsync(`${dirname}/README.md`, { force: true });
+    await rmAsync(`${baseDir}/README.md`, { force: true });
 
     // Copiando o arquivo README.md para raiz do projeto.
     await copyFileAsync(
       getFolderPath("folder-structure", "README.md"),
-      `${dirname}/README.md`
+      `${baseDir}/README.md`
     );
 
     // Copiando o arquivo .env para raiz do projeto.
     await copyFileAsync(
       getFolderPath("folder-structure", ".env"),
-      `${dirname}/.env`
+      `${baseDir}/.env`
     );
 
     // Copiando o arquivo .env.example para raiz do projeto.
     await copyFileAsync(
       getFolderPath("folder-structure", ".env.example"),
-      `${dirname}/.env.example`
+      `${baseDir}/.env.example`
     );
 
     // Apagando a pasta src original.
-    await rmAsync(`${dirname}/src`, { recursive: true, force: true });
+    await rmAsync(`${baseDir}/src`, { recursive: true, force: true });
 
     // Copiando a pasta src com a estrutura padrão e arquivos base.
     await copyFolderAsync(
       getFolderPath("folder-structure", "/src"),
-      `${dirname}/src`
+      `${baseDir}/src`
     );
   } catch (e) {
     throw e;

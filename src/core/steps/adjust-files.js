@@ -51,17 +51,19 @@ const jsonsForReplace = [
   },
 ];
 
-const adjustFiles = async () => {
+const adjustFiles = async (name) => {
   try {
+    const baseDir = `${dirname}${!!name && name !== '.' ? `/${name}` : ''}`;
+
     // // Criando a pasta .vscode no novo projeto.
-    await mkdirAsync(`${dirname}/.vscode`);
+    await mkdirAsync(`${baseDir}/.vscode`);
 
     // Substituindo os json padrões pelos nossos.
     for (let i = 0; i < jsonsForReplace.length; i++) {
       const { originFile, newFile, removeKeys } = jsonsForReplace[i];
 
       await replaceJson(
-        `${dirname}/${originFile}`,
+        `${baseDir}/${originFile}`,
         getFolderPath("configs", newFile),
         removeKeys
       );
@@ -73,7 +75,7 @@ const adjustFiles = async () => {
 
       await copyFileAsync(
         getFolderPath("configs", file),
-        `${dirname}/${destiny}`
+        `${baseDir}/${destiny}`
       );
     }
   } catch (e) {

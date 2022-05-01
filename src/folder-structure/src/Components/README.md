@@ -4,7 +4,7 @@
 
 ## Padrões de Desenvolvimento.
 
-- Os contextos devem ser separados por pastas e devem ser nomeadas com `PascalCase`.
+- Os componentes devem ser separados por pastas e devem ser nomeadas com `PascalCase`.
 
 - Cada pasta deverá conter os seguintes arquivos `index.tsx`, `index.mdx`, `index.styled.ts`, `index.test.tsx`.
 

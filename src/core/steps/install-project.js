@@ -12,40 +12,43 @@ const execWithLoadingMessage = async (command, message) => {
   await exec(command, stopLoading, stopLoading);
 };
 
-const installProject = async () => {
+const installProject = async (name) => {
   try {
-    // // Executando o CRA padrão do React com o template de TypeScript.
-    await execWithLoadingMessage(COMMANDS_LIST.START, "Iniciando o projeto");
+    const folderInstall = !!name && name !== "." ? name : '';
 
-    // Corrigindo o react-scripts para utilização do craco no projeto.
-    await execWithLoadingMessage(
-      COMMANDS_LIST.FIX_REACT_SCRIPTS,
-      "Corrigindo react-scripts"
-    );
+    const commands = [
+      {
+        command: COMMANDS_LIST.START.replace(":name", name || "."),
+        message: "Iniciando o projeto",
+      },
+      {
+        command: COMMANDS_LIST.FIX_REACT_SCRIPTS.replace(":name", folderInstall),
+        message: "Corrigindo react-scripts",
+      },
+      {
+        command: COMMANDS_LIST.INSTALL_DEPENDENCIES_BASE.replace(":name", folderInstall),
+        message: "Instalando as dependências iniciais",
+      },
+      {
+        command: COMMANDS_LIST.INSTALL_DEPENDENCIES_DEV.replace(":name", folderInstall),
+        message: "Instalando as dependências de desenvolvimento",
+      },
+      {
+        command: COMMANDS_LIST.INSTALL_DEPENDENCIES_JEST.replace(":name", folderInstall),
+        message: "Instalando as dependências do jest",
+      },
+      {
+        command: COMMANDS_LIST.INSTALL_DOCZ_DEPENDENCIES.replace(":name", folderInstall),
+        message: "Instalando as dependências do docz",
+      },
+    ];
 
-    // Instalando React Router Dom e Styled-Component.
-    await execWithLoadingMessage(
-      COMMANDS_LIST.INSTALL_DEPENDENCIES_BASE,
-      "Instalando as dependências iniciais"
-    );
+    for (let i = 0; i < commands.length; i++) {
+      const { command, message } = commands[i];
 
-    // Instalando dependências de desenvolvimento.
-    await execWithLoadingMessage(
-      COMMANDS_LIST.INSTALL_DEPENDENCIES_DEV,
-      "Instalando as dependências de desenvolvimento"
-    );
-
-    // Instalando dependências do jest.
-    await execWithLoadingMessage(
-      COMMANDS_LIST.INSTALL_DEPENDENCIES_JEST,
-      "Instalando as dependências do jest"
-    );
-
-    // Instalando dependências do docz.
-    await execWithLoadingMessage(
-      COMMANDS_LIST.INSTALL_DOCZ_DEPENDENCIES,
-      "Instalando as dependências do docz"
-    );
+      // Instalando projeto.
+      await execWithLoadingMessage(command, message);
+    }
   } catch (e) {
     throw e;
   }

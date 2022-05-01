@@ -3,7 +3,8 @@
     "prefix": ["component-init", "mci"],
     "body": [
       "import React from 'react';",
-      "\nconst $1ComponentName: React.IComponent = () => {",
+      "\nexport interface IComponentName extends React.IDefaultProps {}",
+      "\nconst $1ComponentName: React.FC<IComponentName> = () => {",
       "\treturn <></>;",
       "};",
       "\nexport default $1ComponentName;",
@@ -39,8 +40,9 @@
     "prefix": ["component-styles", "mcs"],
     "body": [
       "import React from 'react';",
-      "\nimport * as Styles from './index.styled.ts';",
-      "\nconst $1ComponentName: React.FC = () => {",
+      "\nimport * as Styles from './index.styled';",
+      "\nexport interface IComponentName extends React.IDefaultProps {}",
+      "\nconst $1ComponentName: React.FC<IComponentName> = () => {",
       "\treturn <></>;",
       "};",
       "\nexport default $1ComponentName;",

@@ -29,12 +29,12 @@ import React from 'react';
 
 import * as Styles from './index.styled.ts';
 
-interface IMyComponentProps {
+export interface IMyComponentProps extends React.IDefaultProps {
     prop1: string;
     prop2: string;
 }
 
-const MyComponent: React.IComponent<IMyComponentProps> = ({
+const MyComponent: React.FC<IMyComponentProps> = ({
     testId = "default-id",
     prop1,
     prop2
@@ -106,14 +106,14 @@ As tipagens devem ser exportadas para caso precise ser reutilizadas na tipagem d
 É o arquivo de testes unitários do componente, deve conter testes de renderização, principais funcionalidades e variações de estilo.
 
 ```ts
-import { render } from "tests/CustomRender";
+import { render } from 'tests/CustomRender';
 
-import MyComponent from ".";
+import MyComponent from '.';
 
-describe("<MyComponent />", () => {
-  it("Testing render.", () => {
-    render(<MyComponent />);
-  });
+describe('<MyComponent />', () => {
+	it('Testing render.', () => {
+		render(<MyComponent />);
+	});
 });
 ```
 

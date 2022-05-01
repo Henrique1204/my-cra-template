@@ -64,6 +64,8 @@ Você não precisa usar `eject`. O conjunto de recursos com curadoria é adequad
 
 Utilizado para limpar o cache do `node_modules` e da documentação gerada pelo `Docz`.
 
+**Nota: Esse comando só funciona em terminais bash.**
+
 ### `npm test` ou `yarn test`
 
 Executa os testes de modo que ele atualize os resultados a cada arquivo alterado e exibe todas as saídas do terminal.
@@ -87,6 +89,14 @@ Gera o relatório de cobertura dos testes, para exibir o quanto `(%)` do seu pro
 Inicia a documentação do projeto pelo `docz`.
 
 A documentação será aberta na url [http://localhost:4000](http://localhost:4000) dentro do navegador.
+
+### `npm docs:clear` ou `yarn docs:clear`
+
+Inicia a documentação do projeto pelo `docz` e remove o cache de versões anteriores.
+
+A documentação será aberta na url [http://localhost:4000](http://localhost:4000) dentro do navegador.
+
+**Nota: Esse comando só funciona em terminais bash.**
 
 ## Mais informação
 

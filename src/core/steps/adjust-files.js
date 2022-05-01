@@ -20,7 +20,6 @@ const filesForCopy = [
     file: "jest.tsconfig.setup.json",
     destiny: "jest.tsconfig.json",
   },
-  { file: "doczrc.setup.js", destiny: "doczrc.js" },
   {
     file: "gatsby-node.setup.js",
     destiny: "gatsby-node.js",

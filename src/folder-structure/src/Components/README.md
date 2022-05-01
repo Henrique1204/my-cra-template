@@ -10,7 +10,7 @@
 
 - Pode conter sub componentes para auxiliar na componentização/criação do componente.
 
-- Após a criação do componente deve importar e exportar ele no index.ts na raiz da pasta componentes, a ordem de importação deve ser alfabética. 
+- Após a criação do componente deve importar e exportar ele no index.ts na raiz da pasta componentes, a ordem de importação deve ser alfabética.
 
 ## Exemplos de Arquivos
 
@@ -92,6 +92,7 @@ export const Container = styled.div<IContainerProps>`
     ...
 `;
 ```
+
 As tipagens devem ser exportadas para caso precise ser reutilizadas na tipagem das props do componente principal.
 
 ### `index.test.tsx` (Testes unitários).
@@ -99,14 +100,14 @@ As tipagens devem ser exportadas para caso precise ser reutilizadas na tipagem d
 É o arquivo de testes unitários do componente, deve conter testes de renderização, principais funcionalidades e variações de estilo.
 
 ```ts
-import { render } from 'tests/CustomRender';
+import { render } from "tests/CustomRender";
 
-import MyComponent from '.';
+import MyComponent from ".";
 
-describe('<MyComponent />', () => {
-	it('Testing render.', () => {
-		render(<MyComponent />);
-	});
+describe("<MyComponent />", () => {
+  it("Testing render.", () => {
+    render(<MyComponent />);
+  });
 });
 ```
 

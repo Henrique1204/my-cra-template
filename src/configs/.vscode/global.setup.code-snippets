@@ -3,7 +3,7 @@
     "prefix": ["component-init", "mci"],
     "body": [
       "import React from 'react';",
-      "\nconst $1ComponentName: React.FC = () => {",
+      "\nconst $1ComponentName: React.IComponent = () => {",
       "\treturn <></>;",
       "};",
       "\nexport default $1ComponentName;",
@@ -126,5 +126,43 @@
       "});"
     ],
     "description": "Create test it for hook."
+  },
+  "Create docs for Component": {
+    "prefix": ["doc-component", "mdc"],
+    "body": [
+      "---",
+      "name: ComponentName",
+      "route: /components/component-name",
+      "menu: Components",
+      "---",
+      "\nimport { Props } from 'docz';",
+      "\nimport ComponentName from './index.tsx';",
+      "import Playground from '../Playground/index.tsx';",
+      "\n# ComponentName",
+      "\n## Propriedades",
+      "\n<Props of={ComponentName} />",
+      "\n## Componente",
+      "\n<Playground>",
+      "\t<ComponentName />",
+      "</Playground>",
+      ""
+    ]
+  },
+  "Create docs for Hooks": {
+    "prefix": ["doc-hooks", "mdh"],
+    "body": [
+      "---",
+      "name: useMyHook",
+      "route: /hooks/my-hook",
+      "menu: Hooks",
+      "---",
+      "\n# useMyHook",
+      "\n...",
+      "\n## Como utilizar",
+      "\n...",
+      "\n## Parâmetros",
+      "\n...",
+      ""
+    ]
   }
 }

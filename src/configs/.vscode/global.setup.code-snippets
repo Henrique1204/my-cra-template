@@ -3,8 +3,8 @@
     "prefix": ["component-init", "mci"],
     "body": [
       "import React from 'react';",
-      "\nexport interface IComponentName extends React.IDefaultProps {}",
-      "\nconst $1ComponentName: React.FC<IComponentName> = () => {",
+      "\nexport interface IComponentName {}",
+      "\nconst $1ComponentName: React.FC<IComponentName & React.IDefaultProps> = () => {",
       "\treturn <></>;",
       "};",
       "\nexport default $1ComponentName;",
@@ -41,8 +41,8 @@
     "body": [
       "import React from 'react';",
       "\nimport * as Styles from './index.styled';",
-      "\nexport interface IComponentName extends React.IDefaultProps {}",
-      "\nconst $1ComponentName: React.FC<IComponentName> = () => {",
+      "\nexport interface IComponentName {}",
+      "\nconst $1ComponentName: React.FC<IComponentName & React.IDefaultProps> = () => {",
       "\treturn <></>;",
       "};",
       "\nexport default $1ComponentName;",
@@ -55,7 +55,7 @@
     "body": [
       "import React from 'react';",
       "import { Routes, Route } from 'react-router-dom';",
-      "\nimport { LazyRoute } from 'components';",
+      "\nimport { LazyRoute } from 'Components';",
       "\nconst MyPages = {",
       "\tTemplate: React.lazy(() => import('./Template')),",
       "};",
@@ -90,7 +90,7 @@
   "Inicialize Test Component": {
     "prefix": ["test-component", "mtc"],
     "body": [
-      "import { render } from 'tests/CustomRender';",
+      "import { render } from 'Tests/CustomRender';",
       "\nimport ComponentName from '.';",
       "\ndescribe('<ComponentName />', () => {",
       "\tit('Testing render.', () => {",
@@ -109,7 +109,7 @@
   "Inicialize Test Hook": {
     "prefix": ["test-hook", "mth"],
     "body": [
-      "import { renderHook } from 'tests/CustomRender';",
+      "import { renderHook } from 'Tests/CustomRender';",
       "\nimport useHookName from '.';",
       "\ndescribe('useHookName', () => {",
       "\tit('Testing render.', () => {",

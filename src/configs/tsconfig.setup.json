@@ -21,6 +21,5 @@
     "types": ["@types/jest", "@types/node"],
     "typeRoots": ["./node_modules/@types", "./src/@types"]
   },
-  "include": ["**/*.*", "**/*.svg"],
-  "exclude": ["**/*.test.*"]
+  "include": ["**/*.*", "**/*.svg"]
 }

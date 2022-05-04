@@ -22,10 +22,6 @@ const installProject = async (name) => {
         message: "Iniciando o projeto",
       },
       {
-        command: COMMANDS_LIST.FIX_REACT_SCRIPTS.replace(":name", folderInstall),
-        message: "Corrigindo react-scripts",
-      },
-      {
         command: COMMANDS_LIST.INSTALL_DEPENDENCIES_BASE.replace(":name", folderInstall),
         message: "Instalando as dependências iniciais",
       },

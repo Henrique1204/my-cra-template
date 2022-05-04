@@ -32,10 +32,6 @@ const filesForCopy = [
     file: ".vscode/global.setup.code-snippets",
     destiny: ".vscode/global.code-snippets",
   },
-  {
-    file: "tsconfig.paths.setup.json",
-    destiny: "tsconfig.paths.json",
-  },
 ];
 
 const jsonsForReplace = [

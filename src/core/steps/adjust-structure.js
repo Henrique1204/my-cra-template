@@ -26,18 +26,6 @@ const adjustStructure = async (name) => {
       `${baseDir}/README.md`
     );
 
-    // Copiando o arquivo .env para raiz do projeto.
-    await copyFileAsync(
-      getFolderPath("folder-structure", ".env"),
-      `${baseDir}/.env`
-    );
-
-    // Copiando o arquivo .env.example para raiz do projeto.
-    await copyFileAsync(
-      getFolderPath("folder-structure", ".env.example"),
-      `${baseDir}/.env.example`
-    );
-
     // Apagando a pasta src original.
     await rmAsync(`${baseDir}/src`, { recursive: true, force: true });
 

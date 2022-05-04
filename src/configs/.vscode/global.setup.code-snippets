@@ -50,6 +50,18 @@
     ],
     "description": "Create component with arrow function, IComponent typing and import of styles."
   },
+  "Create Page": {
+    "prefix": ["create-page", "mcp"],
+    "body": [
+      "import React from 'react';",
+      "\nconst $1PageName: React.FC = () => {",
+      "\treturn <></>;",
+      "};",
+      "\nexport default $1PageName;",
+      ""
+    ],
+    "description": "Create page example."
+  },
   "Inicialize Router Component": {
     "prefix": ["route-init", "mri"],
     "body": [
@@ -57,23 +69,16 @@
       "import { Routes, Route } from 'react-router-dom';",
       "\nimport { LazyRoute } from 'Components';",
       "\nconst MyPages = {",
-      "\tTemplate: React.lazy(() => import('./Template')),",
+      "\tPage: React.lazy(() => import('./index')),",
       "};",
-      "\nconst RoutesComponent = () => {",
+      "\nconst RoutesName = () => {",
       "\treturn (",
       "\t\t<Routes>",
-      "\t\t\t<Route",
-      "\t\t\t\tpath=''",
-      "\t\t\t\telement={",
-      "\t\t\t\t\t<LazyRoute component={<MyPages.Template />} isDrawer={false} />",
-      "\t\t\t\t}",
-      "\t\t\t>",
-      "\t\t\t\t$1",
-      "\t\t\t</Route>",
+      "\t\t\t<Route path='' element={<LazyRoute>{<MyPages.Page />}</LazyRoute>} />",
       "\t\t</Routes>",
       "\t);",
       "};",
-      "\nexport default RoutesComponent;",
+      "\nexport default RoutesName;",
       ""
     ],
     "description": "Start component for route of pages."
@@ -148,7 +153,8 @@
       "\t<ComponentName />",
       "</Playground>",
       ""
-    ]
+    ],
+    "description": "Create your component's documentation base."
   },
   "Create docs for Hooks": {
     "prefix": ["doc-hooks", "mdh"],
@@ -165,6 +171,12 @@
       "\n## Parâmetros",
       "\n...",
       ""
-    ]
+    ],
+    "description": "Create your hook's documentation base."
+  },
+  "Import styles": {
+    "prefix": ["import-styles", "mis"],
+    "body": ["import * as Styles from './index.styled';"],
+    "description": "Import styles."
   }
 }

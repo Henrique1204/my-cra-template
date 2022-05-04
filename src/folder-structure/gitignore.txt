@@ -22,3 +22,4 @@ yarn-error.log*
 
 .env
 /.docz
+react-app-env.d.ts

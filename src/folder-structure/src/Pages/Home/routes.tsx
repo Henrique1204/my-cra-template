@@ -1,18 +1,18 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import { LazyRoute } from "Components";
+import { LazyRoute } from 'Components';
 
 const MyPages = {
-  Home: React.lazy(() => import("./index")),
+	Home: React.lazy(() => import('./index')),
 };
 
-const RoutesName = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<LazyRoute>{<MyPages.Home />}</LazyRoute>} />
-    </Routes>
-  );
+const HomeRoutes = () => {
+	return (
+		<Routes>
+			<Route path='/' element={<LazyRoute>{<MyPages.Home />}</LazyRoute>} />
+		</Routes>
+	);
 };
 
-export default RoutesName;
+export default HomeRoutes;

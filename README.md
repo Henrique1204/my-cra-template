@@ -1,10 +1,8 @@
-# Projeto criado com `@henrique1204/create-react-app`.
+# `@henrique1204/create-react-app`
 
-Esse projeto foi criado utilizando como base no [Create React App](https://github.com/facebook/create-react-app) original.
+Esse CRA utiliza o [Create React App](https://github.com/facebook/create-react-app) original como base para criação da estrutura.
 
-E personalizado por [@henrique1024](https://github.com/Henrique1204/my-cra-template).
-
-Link para [NPM](https://www.npmjs.com/package/@henrique1204/create-react-app).
+Criado por [@henrique1024](https://github.com/Henrique1204/my-cra-template).
 
 ## Dependências usadas no projeto.
 

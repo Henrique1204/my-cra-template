@@ -3,8 +3,11 @@ import * as Theme from 'Assets/theme';
 export type TextColorsValues = typeof Theme.text;
 export type TextColorsEnum = keyof TextColorsValues;
 
-export type PrimarColorsyValues = typeof Theme.primary;
-export type PrimaryColorsEnum = keyof PrimaryValues;
+export type ColorsValues = typeof Theme.colors;
+export type ColorsEnum = keyof ColorsValues;
+
+export type PrimaryColorsyValues = typeof Theme.primary;
+export type PrimaryColorsEnum = keyof PrimaryColorsyValues;
 
 export type SuccessColorsValues = typeof Theme.success;
 export type SuccessColorsEnum = keyof SuccessColorsValues;

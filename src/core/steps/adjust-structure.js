@@ -2,37 +2,34 @@ const dirname = process.cwd();
 
 const getFolderPath = require("../utils/get-folder-path");
 
-const { copyFolderAsync, rmAsync, copyFileAsync } = require("../utils/async-functions");
+const { copyFolderAsync, rmAsync } = require("../utils/async-functions");
+
+const structureFiles = [
+  { originalPath: '.gitignore', myPath: 'gitignore.txt' },
+  { originalPath: 'README.md', myPath: 'README.md' },
+  { originalPath: 'src', myPath: '/src' },
+  { originalPath: 'public', myPath: '/public' }
+];
 
 const adjustStructure = async (name) => {
   try {
     const baseDir = `${dirname}${!!name && name !== '.' ? `/${name}` : ''}`;
 
-    // Apagando o .gitignore original.
-    await rmAsync(`${baseDir}/.gitignore`, { force: true });
+    // Substituindo arquivos e pastas originais.
+    for (let i = 0; i < structureFiles.length; i++) {
+      const originalPath = `${baseDir}/${structureFiles[i].originalPath}`;
 
-    // Copiando o arquivo .gitignore para raiz do projeto.
-    await copyFileAsync(
-      getFolderPath("folder-structure", "gitignore.txt"),
-      `${baseDir}/.gitignore`
-    );
+      await rmAsync(originalPath, { recursive: true, force: true });
+  
+      await copyFolderAsync(
+        getFolderPath("folder-structure", structureFiles[i].myPath),
+        originalPath
+      );
+    }
 
-    // Apagando o README.md original.
-    await rmAsync(`${baseDir}/README.md`, { force: true });
-
-    // Copiando o arquivo README.md para raiz do projeto.
-    await copyFileAsync(
-      getFolderPath("folder-structure", "README.md"),
-      `${baseDir}/README.md`
-    );
-
-    // Apagando a pasta src original.
-    await rmAsync(`${baseDir}/src`, { recursive: true, force: true });
-
-    // Copiando a pasta src com a estrutura padrão e arquivos base.
     await copyFolderAsync(
-      getFolderPath("folder-structure", "/src"),
-      `${baseDir}/src`
+      getFolderPath("folder-structure", "Snippets.md"),
+      `${baseDir}/.vscode/README.md`
     );
   } catch (e) {
     throw e;

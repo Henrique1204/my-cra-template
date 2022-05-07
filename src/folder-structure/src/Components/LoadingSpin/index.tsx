@@ -2,11 +2,11 @@ import React from 'react';
 
 import * as Styles from './index.styled';
 
-interface ILoadingSpin {
+interface ILoadingSpin extends React.IDefaultProps {
 	loading: boolean;
 }
 
-const LoadingSpin: React.FC<ILoadingSpin & React.IDefaultProps> = ({
+const LoadingSpin: React.FC<ILoadingSpin> = ({
 	testId = 'loading-spin',
 	className = 'loading-spin',
 	loading,

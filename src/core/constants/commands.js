@@ -18,7 +18,8 @@ const JEST_DEPENDENCIES = [
 const DOCZ_DEPENDENCIES = [
   "docz",
   "@emotion/core@10.1.1",
-  "eslint@7.32.0"
+  "eslint@7.32.0",
+  "remark-mdx@2.0.0-next.9",
 ];
 
 const COMMANDS_LIST = {
